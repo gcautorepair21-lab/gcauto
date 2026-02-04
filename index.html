@@ -3,41 +3,50 @@
 <head>
   <title>GC Auto Repair</title>
   <style>
+    :root {
+      --black: #000000;
+      --dark-gray: #4f4f4f;
+      --gold: #e6c15a;
+      --red: #d32f2f;
+      --white: #ffffff;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0f1115;
-      color: #e5e5e5;
+      background-color: var(--black);
+      color: var(--white);
     }
 
     /* NAV */
     nav {
-      background-color: #0b0d11;
+      background-color: var(--black);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
-      border-bottom: 2px solid #f7931e;
+      border-bottom: 3px solid var(--red);
     }
     nav .logo img {
-      height: 40px;
+      height: 45px;
     }
     nav a {
-      color: #e5e5e5;
+      color: var(--gold);
       text-decoration: none;
       margin-left: 20px;
+      font-weight: bold;
     }
 
-    /* HERO WITH BACKGROUND LOGO */
+    /* HERO = LOGO HOMEPAGE */
     header {
       position: relative;
       background-image: url("assets/logo.jpg");
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 70vh;
+      min-height: 80vh;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       text-align: center;
     }
@@ -46,33 +55,28 @@
     header::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.65);
+      inset: 0;
+      background: rgba(0,0,0,0.7);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
-      padding: 20px;
+      padding-bottom: 60px;
     }
 
     .hero-content h1 {
-      font-size: 48px;
-      color: #ffffff;
-      margin-bottom: 15px;
+      font-size: 52px;
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
     .hero-content p {
-      font-size: 20px;
-      line-height: 1.6;
+      font-size: 22px;
     }
 
     .hero-content strong {
-      color: #f7931e;
+      color: var(--red);
     }
 
     section {
@@ -82,14 +86,17 @@
     }
 
     h2 {
-      color: #f7931e;
-      font-size: 30px;
+      color: var(--gold);
+      font-size: 32px;
       margin-bottom: 15px;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .services {
@@ -100,18 +107,23 @@
     }
 
     .card {
-      background-color: #1b1e24;
+      background-color: var(--dark-gray);
       padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #2a2e36;
+      border-radius: 10px;
+      border-left: 5px solid var(--red);
+    }
+
+    .card h3 {
+      color: var(--gold);
     }
 
     footer {
-      background-color: #0b0d11;
+      background-color: var(--black);
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       font-size: 14px;
-      border-top: 2px solid #f7931e;
+      border-top: 3px solid var(--red);
+      color: var(--gold);
     }
   </style>
 </head>
@@ -139,14 +151,10 @@
 </header>
 
 <section>
-  <h2>About GC Auto Repair</h2>
+  <h2>About Us</h2>
   <p>
-    We specialize in collision repairs and work with all types of insurance
+    We specialize in collision repairs and work with all insurance companies
     to make the repair process smooth and stress-free.
-  </p>
-  <p>
-    Our mission is to create a safe, welcoming space where customers feel
-    comfortable, respected, and confident in the care of their vehicle.
   </p>
 </section>
 
@@ -159,7 +167,7 @@
     </div>
     <div class="card">
       <h3>Insurance Claims</h3>
-      <p>We work directly with all insurance companies.</p>
+      <p>We handle everything with your insurance.</p>
     </div>
     <div class="card">
       <h3>Diagnostics</h3>
@@ -169,13 +177,13 @@
 </section>
 
 <section>
-  <h2>Contact Us</h2>
+  <h2>Contact</h2>
   <p>📞 323-273-6527 | 323-629-9550</p>
   <p>📍 1030 E 35th St, Los Angeles, CA 90011</p>
 </section>
 
 <footer>
-  © 2026 GC Auto Repair. All rights reserved.
+  © 2026 GC Auto Repair — Built with pride.
 </footer>
 
 </body>
