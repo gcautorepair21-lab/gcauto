@@ -7,6 +7,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f6f8;
+      color: #333;
     }
 
     /* NAV MENU */
@@ -29,37 +30,58 @@
       font-size: 16px;
     }
 
+    /* HERO */
     header {
       background-color: #222;
       color: white;
-      padding: 50px 20px;
+      padding: 70px 20px;
       text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
+    }
+
+    section h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-top: 20px;
     }
 
     .card {
       background: white;
-      padding: 20px;
+      padding: 25px;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -77,27 +99,54 @@
 <!-- HERO -->
 <header>
   <h1>Gc Auto Repair</h1>
-  <p>Trusted Auto Repair • Honest Service • Fair Prices</p>
+  <p>Professional Collision Repair • Insurance Accepted • Customer First</p>
 </header>
 
+<!-- ABOUT SECTION -->
 <section>
-  <h2>What We Do</h2>
+  <h2>About Gc Auto Repair</h2>
   <p>
-    At Gc Auto Repair, we provide reliable and professional auto repair services.
-    Our mission is to keep your vehicle running safely and smoothly.
+    At <strong>Gc Auto Repair</strong>, we specialize in high-quality collision repairs
+    and work with all types of insurance companies to make the repair process
+    as smooth as possible for our customers.
+  </p>
+  <p>
+    We are committed to creating a safe, welcoming environment where our customers
+    feel comfortable, respected, and confident that their vehicle is in good hands.
+    Your safety and satisfaction are always our top priority.
   </p>
 </section>
 
+<!-- SERVICES -->
 <section>
   <h2>Our Services</h2>
   <div class="services">
     <div class="card">
-      <h3>Brake Repair</h3>
-      <p>Inspection and repair of brakes to keep you safe on the road.</p>
+      <h3>Collision Repair</h3>
+      <p>Complete body and collision repair to restore your vehicle.</p>
     </div>
     <div class="card">
-      <h3>Oil Change</h3>
-      <p>Quick and affordable oil changes to protect your engine.</p>
+      <h3>Insurance Claims</h3>
+      <p>We work with all insurance providers to handle claims efficiently.</p>
     </div>
     <div class="card">
-      <h3>Engine Diagnostics</h3>
+      <h3>Auto Diagnostics</h3>
+      <p>Accurate diagnostics to identify and fix issues quickly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <h2>Contact Us</h2>
+  <p>Email: your@email.com</p>
+  <p>Phone: (123) 456-7890</p>
+</section>
+
+<footer>
+  <p>© 2026 Gc Auto Repair. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+     
