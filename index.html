@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gc Auto Repair</title>
+  <title>GC Auto Repair</title>
   <style>
     body {
       margin: 0;
@@ -30,34 +30,51 @@
       margin-left: 20px;
     }
 
-    /* HERO */
+    /* HERO WITH BACKGROUND LOGO */
     header {
+      position: relative;
+      background-image: url("logo.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 70vh;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding: 60px 20px;
-      background: linear-gradient(to right, #0f1115, #1b1e24);
+      text-align: center;
     }
-    .hero-text {
-      max-width: 500px;
+
+    /* DARK OVERLAY */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
       padding: 20px;
     }
-    .hero-text h1 {
-      font-size: 40px;
+
+    .hero-content h1 {
+      font-size: 48px;
       color: #ffffff;
+      margin-bottom: 15px;
     }
-    .hero-text p {
-      font-size: 18px;
-      margin-top: 10px;
+
+    .hero-content p {
+      font-size: 20px;
+      line-height: 1.6;
     }
-    .hero-text strong {
+
+    .hero-content strong {
       color: #f7931e;
-    }
-    .hero-image img {
-      max-width: 450px;
-      width: 100%;
-      border-radius: 10px;
     }
 
     section {
@@ -111,7 +128,7 @@
 </nav>
 
 <header>
-  <div class="hero-text">
+  <div class="hero-content">
     <h1>GC Auto Repair</h1>
     <p>
       Professional <strong>Collision Repair</strong><br>
@@ -119,56 +136,18 @@
       Trusted • Honest • Customer First
     </p>
   </div>
-
-  <div class="hero-image">
-    <img src="logo.jpg" alt="GC Auto Repair Logo">
-  </div>
 </header>
 
 <section>
   <h2>About GC Auto Repair</h2>
   <p>
-    We specialize in high-quality collision repairs and work with all types
-    of insurance companies to make the repair process easy and stress-free.
+    We specialize in collision repairs and work with all types of insurance
+    to make the repair process smooth and stress-free.
   </p>
   <p>
-    Our goal is to create a safe, welcoming environment where our customers
-    feel comfortable, respected, and confident in the care of their vehicle.
+    Our mission is to create a safe, welcoming space where customers feel
+    comfortable, respected, and confident in the care of their vehicle.
   </p>
 </section>
 
 <section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Collision Repair</h3>
-      <p>Complete body and collision repair to restore your vehicle.</p>
-    </div>
-    <div class="card">
-      <h3>Insurance Claims</h3>
-      <p>We work directly with insurance providers to handle your claim.</p>
-    </div>
-    <div class="card">
-      <h3>Diagnostics</h3>
-      <p>Accurate diagnostics to identify issues quickly and correctly.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Contact Us</h2>
-  <p>📞 323-273-6527 | 323-629-9550</p>
-  <p>📍 1030 E 35th St, Los Angeles, CA 90011</p>
-</section>
-
-<footer>
-  © 2026 GC Auto Repair. All rights reserved.
-</footer>
-
-</body>
-</html>
- 
-      
-  
-
- 
