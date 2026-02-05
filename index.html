@@ -12,11 +12,7 @@
       --white: #ffffff;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
@@ -25,7 +21,6 @@
       text-align: center;
     }
 
-    /* NAV */
     nav {
       background-color: var(--black);
       display: flex;
@@ -35,9 +30,7 @@
       border-bottom: 3px solid var(--red);
     }
 
-    nav img {
-      height: 45px;
-    }
+    nav img { height: 45px; }
 
     nav a {
       color: var(--gold);
@@ -47,20 +40,15 @@
       cursor: pointer;
     }
 
-    nav a:hover {
-      color: var(--red);
-    }
+    nav a:hover { color: var(--red); }
 
-    /* SECTIONS */
     .page {
       display: none;
       min-height: 100vh;
       padding: 40px 20px;
     }
 
-    .active {
-      display: block;
-    }
+    .active { display: block; }
 
     /* HOME HERO */
     .home-hero {
@@ -77,11 +65,7 @@
       animation: glow 2s ease-in-out infinite alternate;
     }
 
-    .tagline {
-      font-size: 1.5rem;
-      color: var(--gold);
-      letter-spacing: 1px;
-    }
+    .tagline { font-size: 1.5rem; color: var(--gold); }
 
     .hero-buttons {
       display: flex;
@@ -120,10 +104,7 @@
       }
     }
 
-    h2 {
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
+    h2 { color: var(--gold); margin-bottom: 20px; }
 
     .card {
       background-color: var(--dark-gray);
@@ -132,6 +113,30 @@
       max-width: 600px;
       margin: 20px auto;
       border-left: 5px solid var(--red);
+    }
+
+    /* FORM */
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      background: var(--red);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      box-shadow: 0 0 20px var(--gold);
     }
 
     footer {
@@ -145,10 +150,11 @@
 <body>
 
 <nav>
-  <img src="logo.jpg" alt="GC Auto Repair Logo">
+  <img src="logo.jpg">
   <div>
     <a onclick="showPage('home')">Home</a>
     <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('quote')">Get Quote</a>
     <a onclick="showPage('contact')">Contact</a>
   </div>
 </nav>
@@ -156,11 +162,11 @@
 <!-- HOME -->
 <div id="home" class="page active">
   <div class="home-hero">
-    <img src="logo.jpg" alt="GC Auto Repair Logo">
+    <img src="logo.jpg">
     <div class="tagline">Professional Collision & Auto Repair</div>
     <div class="hero-buttons">
       <a href="tel:3232736527" class="primary">Call Now</a>
-      <a onclick="showPage('contact')">Get Quote</a>
+      <a onclick="showPage('quote')">Get Quote</a>
     </div>
   </div>
 </div>
@@ -173,6 +179,37 @@
       Professional collision repair. We work with all insurance companies
       and focus on honest, high-quality service.
     </p>
+  </div>
+</div>
+
+<!-- QUOTE FORM -->
+<div id="quote" class="page">
+  <h2>Get a Free Quote</h2>
+  <div class="card">
+
+    <form action="https://formspree.io/f/xzdapzlv"
+          method="POST"
+          enctype="multipart/form-data">
+
+      <input type="text" name="year" placeholder="Car Year" required>
+      <input type="text" name="make" placeholder="Car Make" required>
+      <input type="text" name="model" placeholder="Car Model" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+      <textarea name="description" rows="5"
+        placeholder="Describe the damage or issue..." required></textarea>
+
+      <input type="file" name="images" multiple>
+
+      <!-- Optional subject line in your email -->
+      <input type="hidden" name="_subject" value="New Quote Request">
+
+      <!-- Thank you redirect -->
+      <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+
+      <button type="submit">Send Request</button>
+    </form>
+
   </div>
 </div>
 
