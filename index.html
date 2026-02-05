@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>GC Auto Repair</title>
+
   <style>
     :root {
       --black: #000000;
@@ -11,8 +12,13 @@
       --white: #ffffff;
     }
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background-color: var(--black);
       color: var(--white);
@@ -48,8 +54,8 @@
     /* SECTIONS */
     .page {
       display: none;
-      min-height: 80vh;
-      padding: 60px 20px;
+      min-height: 100vh;
+      padding: 40px 20px;
     }
 
     .active {
@@ -61,12 +67,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80vh;
+      height: calc(100vh - 80px); /* minus nav */
     }
 
     .home-logo img {
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 90%;
+      max-height: 90%;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        filter: drop-shadow(0 0 20px #e6c15a)
+                drop-shadow(0 0 40px #d32f2f);
+      }
+      to {
+        filter: drop-shadow(0 0 50px #e6c15a)
+                drop-shadow(0 0 100px #d32f2f);
+      }
     }
 
     h2 {
