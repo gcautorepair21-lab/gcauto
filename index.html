@@ -5,11 +5,12 @@
 
   <style>
     :root {
-      --black: #000000;
-      --dark-gray: #4f4f4f;
+      --black: #0f0f0f;
+      --dark-gray: #1f1f1f;
       --gold: #e6c15a;
       --red: #d32f2f;
       --white: #ffffff;
+      --light-gray: #bdbdbd;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,7 +19,6 @@
       font-family: Arial, sans-serif;
       background-color: var(--black);
       color: var(--white);
-      text-align: center;
     }
 
     nav {
@@ -27,7 +27,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      border-bottom: 3px solid var(--red);
+      border-bottom: 1px solid #333;
     }
 
     nav img { height: 45px; }
@@ -52,56 +52,81 @@
 
     /* HOME HERO */
     .home-hero {
-      height: calc(100vh - 80px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 25px;
+      min-height: calc(100vh - 80px);
+      gap: 40px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .home-hero img {
-      max-width: 60%;
-      animation: glow 2s ease-in-out infinite alternate;
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
-    .tagline { font-size: 1.5rem; color: var(--gold); }
+    .hero-text p {
+      color: var(--light-gray);
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
 
     .hero-buttons {
       display: flex;
-      gap: 20px;
-      margin-top: 20px;
+      gap: 15px;
     }
 
     .hero-buttons a {
-      padding: 15px 30px;
-      border-radius: 30px;
+      padding: 14px 28px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       color: var(--white);
-      border: 2px solid var(--gold);
-      transition: 0.3s;
-    }
-
-    .hero-buttons a.primary {
       background: var(--red);
-      border-color: var(--red);
     }
 
-    .hero-buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px var(--gold);
+    .hero-buttons a.secondary {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
     }
 
-    @keyframes glow {
-      from {
-        filter: drop-shadow(0 0 20px #e6c15a)
-                drop-shadow(0 0 40px #d32f2f);
-      }
-      to {
-        filter: drop-shadow(0 0 50px #e6c15a)
-                drop-shadow(0 0 100px #d32f2f);
-      }
+    .hero-image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* SERVICES */
+    .services {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .services h2 {
+      color: var(--gold);
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: var(--dark-gray);
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .service-card h3 {
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
     h2 { color: var(--gold); margin-bottom: 20px; }
@@ -112,10 +137,8 @@
       border-radius: 10px;
       max-width: 600px;
       margin: 20px auto;
-      border-left: 5px solid var(--red);
     }
 
-    /* FORM */
     form input, form textarea {
       width: 100%;
       padding: 12px;
@@ -126,23 +149,28 @@
 
     form button {
       margin-top: 15px;
-      padding: 15px 30px;
+      padding: 14px 30px;
       border: none;
-      border-radius: 30px;
+      border-radius: 6px;
       background: var(--red);
       color: white;
       font-weight: bold;
       cursor: pointer;
     }
 
-    form button:hover {
-      box-shadow: 0 0 20px var(--gold);
+    footer {
+      border-top: 1px solid #333;
+      padding: 20px;
+      color: var(--light-gray);
+      text-align: center;
+      margin-top: 80px;
     }
 
-    footer {
-      border-top: 3px solid var(--red);
-      padding: 20px;
-      color: var(--gold);
+    @media (max-width: 800px) {
+      .home-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -161,14 +189,47 @@
 
 <!-- HOME -->
 <div id="home" class="page active">
+
   <div class="home-hero">
-    <img src="logo.jpg">
-    <div class="tagline">Professional Collision & Auto Repair</div>
-    <div class="hero-buttons">
-      <a href="tel:3232736527" class="primary">Call Now</a>
-      <a onclick="showPage('quote')">Get Quote</a>
+    <div class="hero-text">
+      <h1>Reliable Auto & Collision Repair</h1>
+      <p>
+        At GC Auto Repair, we provide professional, honest, and high-quality
+        service for all vehicle makes and models. Insurance claims welcome.
+      </p>
+      <div class="hero-buttons">
+        <a href="tel:3232736527">Call Now</a>
+        <a class="secondary" onclick="showPage('quote')">Get Free Quote</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="logo.jpg">
     </div>
   </div>
+
+  <div class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Collision Repair</h3>
+        <p>Body work, dents, frame repair, paint.</p>
+      </div>
+      <div class="service-card">
+        <h3>Insurance Claims</h3>
+        <p>We work with all major insurance companies.</p>
+      </div>
+      <div class="service-card">
+        <h3>Paint & Detailing</h3>
+        <p>Full paint jobs and professional detailing.</p>
+      </div>
+      <div class="service-card">
+        <h3>Diagnostics</h3>
+        <p>Check engine light and inspections.</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ABOUT -->
@@ -176,17 +237,16 @@
   <h2>About GC Auto Repair</h2>
   <div class="card">
     <p>
-      Professional collision repair. We work with all insurance companies
-      and focus on honest, high-quality service.
+      We are a trusted auto body and collision repair shop in Los Angeles.
+      Our goal is simple: quality work, honest pricing, and great service.
     </p>
   </div>
 </div>
 
-<!-- QUOTE FORM -->
+<!-- QUOTE -->
 <div id="quote" class="page">
   <h2>Get a Free Quote</h2>
   <div class="card">
-
     <form action="https://formspree.io/f/xzdapzlv"
           method="POST"
           enctype="multipart/form-data">
@@ -194,22 +254,12 @@
       <input type="text" name="year" placeholder="Car Year" required>
       <input type="text" name="make" placeholder="Car Make" required>
       <input type="text" name="model" placeholder="Car Model" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number" required>
-
+      <input type="tel" name="phone" placeholder="Phone Number" required>
       <textarea name="description" rows="5"
-        placeholder="Describe the damage or issue..." required></textarea>
-
+        placeholder="Describe the issue..." required></textarea>
       <input type="file" name="images" multiple>
-
-      <!-- Optional subject line in your email -->
-      <input type="hidden" name="_subject" value="New Quote Request">
-
-      <!-- Thank you redirect -->
-      <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
-
       <button type="submit">Send Request</button>
     </form>
-
   </div>
 </div>
 
