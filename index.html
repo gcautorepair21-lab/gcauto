@@ -62,18 +62,51 @@
       display: block;
     }
 
-    /* HOME LOGO */
-    .home-logo {
+    /* HOME HERO */
+    .home-hero {
+      height: calc(100vh - 80px);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 80px); /* minus nav */
+      gap: 25px;
     }
 
-    .home-logo img {
-      max-width: 90%;
-      max-height: 90%;
+    .home-hero img {
+      max-width: 60%;
       animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .hero-buttons a {
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: var(--white);
+      border: 2px solid var(--gold);
+      transition: 0.3s;
+    }
+
+    .hero-buttons a.primary {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .hero-buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px var(--gold);
     }
 
     @keyframes glow {
@@ -122,8 +155,13 @@
 
 <!-- HOME -->
 <div id="home" class="page active">
-  <div class="home-logo">
+  <div class="home-hero">
     <img src="logo.jpg" alt="GC Auto Repair Logo">
+    <div class="tagline">Professional Collision & Auto Repair</div>
+    <div class="hero-buttons">
+      <a href="tel:3232736527" class="primary">Call Now</a>
+      <a onclick="showPage('contact')">Get Quote</a>
+    </div>
   </div>
 </div>
 
